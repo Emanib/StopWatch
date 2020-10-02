@@ -4,7 +4,8 @@ var seconds = 0, minutes = 0,
 hours = 0; var clearState; 
 var secs, mins, gethours ;
     function startWatch( ) {
-        if ( seconds === 60 ) { seconds = 0; minutes = minutes + 1; } 
+        if ( seconds === 60 ) 
+        { seconds = 0; minutes = minutes + 1; } 
         mins = ( minutes < 10 ) ? ( '0' + minutes + ': ' ) : ( minutes + ': ' ); 
         if ( minutes === 60 ) { minutes = 0; hours = hours + 1; } 
         gethours = ( hours < 10 ) ? ( '0' + hours + ': ' ) : ( hours + ': ' ); 
@@ -13,18 +14,20 @@ var secs, mins, gethours ;
       x.innerHTML = 'Time: ' + gethours + mins + secs; 
         seconds++; 
     clearTime = setTimeout( "startWatch( )", 1000 ); } 
+
     function startTime( ) {
     if ( seconds === 0 && minutes === 0 && hours === 0 ) { 
         var fulltime = document.getElementById( "runtime" ); 
         fulltime.style.display = "none"; 
     
-        this.style.display = "none"; }}
+       // this.style.display = "none"; 
+    }
+    }
         
-        startWatch( ); 
-    
-        window.addEventListener( 'load', function ( ) { 
-           var start = document .getElementById("start"); 
-            start.addEventListener( 'click', startTime ); }); 
+        startWatch(); 
+ 
+          var start = document .getElementById("start"); 
+            start.addEventListener( 'click', startTime ); 
             
             function stopTime( ) { 
                 
@@ -39,12 +42,14 @@ var secs, mins, gethours ;
                         var x = document.getElementById ("time"); 
                         var stopTime = gethours + mins + secs; x.innerHTML = stopTime; 
                         
-                        var showStart = document.getElementById ('start'); 
+                     /*   var showStart = document.getElementById ('start'); 
                         showStart.style.display = "inline-block"; 
                         var showStop = document.getElementById ("stop"); 
-                        showStop.style.display = "inline-block"; 
+                        showStop.style.display = "inline-block"; */ 
                         
-                            clearTimeout( clearTime ); }}
-                            window.addEventListener( 'load', function ( ) {
-                                var stop = document.getElementById ("stop"); 
-                                stop.addEventListener( 'click', stopTime ); }); 
+                            clearTimeout( clearTime ); }
+                        }
+                            var stop = document.getElementById ("stop");
+                           stop.addEventListener( 'click', stopTime);
+                               
+                                 
