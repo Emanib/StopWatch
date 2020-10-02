@@ -23,7 +23,6 @@ var secs, mins, gethours ;
        
     }
     }
-        
         startWatch(); 
  
           var start = document .getElementById("start"); 
@@ -35,7 +34,8 @@ var secs, mins, gethours ;
                     
                         var runtime = document .getElementById( "runtime" );
                         
-                        runtime.style.display = "block"; var time = gethours + mins + secs; runtime.innerHTML = 'Time: ' + time; 
+                        runtime.style.display = "block"; 
+                var time = gethours + mins + secs; runtime.innerHTML = 'Time: ' + time; 
                         
                         seconds = 0; minutes = 0; hours = 0; secs = '0' + seconds; mins = '0' + minutes + ': '; gethours = '0' + hours + ': '; 
                         
